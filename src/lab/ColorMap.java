@@ -1,4 +1,5 @@
- import java.util.Arrays;
+package ColorMap;
+import java.util.Arrays;
  import java.awt.Color;
  
  public class ColorMap
