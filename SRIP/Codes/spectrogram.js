@@ -11,7 +11,8 @@ return  window.requestAnimationFrame       ||
 })();
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
-
+var d3;
+var i;
 // helper function for loading one or more sound files
 function loadSounds(obj, context, soundMap, callback) {
   var names = [];
@@ -59,12 +60,13 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
       request.response,
       function(buffer) {
         if (!buffer) {
-          alert('error decoding file data: ' + url);
+          alert("error decoding file data: " + url);
           return;
         }
         loader.bufferList[index] = buffer;
-        if (++loader.loadCount == loader.urlList.length)
+        if (++loader.loadCount === loader.urlList.length){
           loader.onload(loader.bufferList);
+        }
       },
       function(error) {
         console.error('decodeAudioData error', error);
@@ -73,14 +75,15 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
   }
 
   request.onerror = function() {
-    alert('BufferLoader: XHR error');
+    alert("BufferLoader: XHR error");
   }
   request.send();
 };
 
 BufferLoader.prototype.load = function() {
-  for (var i = 0; i < this.urlList.length; ++i)
+  for (var i = 0; i < this.urlList.length; ++i){
   this.loadBuffer(this.urlList[i], i);
+  }
 };
 
 // ---
@@ -152,7 +155,7 @@ Spectrogram.prototype.process = function(e) {
     this.curSec =  (this.sampleRate * this.count) / this.buffer.sampleRate;
     this.analyser.getByteFrequencyData(this.freqs);
 
-    var d = {'key':this.curSec, 'values':new Uint8Array(this.freqs)};
+    var d = {"key":this.curSec, "values":new Uint8Array(this.freqs)};
     this.data.push(d);
     if(this.count >= this.maxCount) {
       this.switchButtonText();
@@ -213,17 +216,17 @@ Spectrogram.prototype.setupVisual = function() {
     .style("margin-top", this.height + this.margin.top + this.margin.bottom + 20 + "px")
     .style("margin-left", "20px")
     .on("change", function() {
-      var newFreq = this.options[this.selectedIndex].value
+      var newFreq = this.options[this.selectedIndex].value;
       console.log(newFreq);
       that.yScale.domain([0, newFreq]);
       that.draw();
     });
 
-  this.freqSelect.selectAll('option')
+  this.freqSelect.selectAll("option")
     .data(freqs).enter()
     .append("option")
     .attr("value", function(d) { return d;})
-    .attr("selected", function(d,i) { return (d == 11047) ? "selected" : null;})
+    .attr("selected", function(d,i) { return (d === 11047) ? "selected" : null;})
     .text(function(d) { return d3.round(d / 1000) + "k";});
 
   this.maxCount = (this.context.sampleRate / this.sampleRate) * this.buffer.duration;
@@ -264,7 +267,7 @@ Spectrogram.prototype.setupVisual = function() {
   this.svg.append("g")
     .attr("class", "y axis")
     .attr("transform", "translate(" + (-10) + ",0)")
-    .call(this.yAxis)
+    .call(this.yAxis);
 }
 
 // ---
@@ -281,14 +284,14 @@ Spectrogram.prototype.showProgress = function() {
       .attr("x2", function() {return that.xScale(that.curDuration);})
       .attr("y1", 0)
       .attr("y2", this.height)
-      .attr("stroke",'red')
+      .attr("stroke","red")
       .attr("stroke-width", 2.0);
 
     requestAnimFrame(this.showProgress.bind(this));
 
     if(this.curDuration >= this.buffer.duration) {
       this.progressLine.attr("y2", 0);
-      this.togglePlayback()
+      this.togglePlayback();
     }
   }
 }
@@ -308,7 +311,7 @@ Spectrogram.prototype.togglePlayback = function() {
   if (this.isPlaying) {
     this.source.stop(0);
     this.startOffset += this.context.currentTime - this.startTime;
-    console.log('paused at', this.startOffset);
+    console.log("paused at", this.startOffset);
     this.button.attr("disabled", null);
   } else {
     this.button.attr("disabled", true);
