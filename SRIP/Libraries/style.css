@@ -1,0 +1,21 @@
+h1{
+	font-family: "Times New Roman";
+	text-decoration: underline;
+
+}
+body{
+	background-color: lightgray;
+}
+
+.a{
+	line-height: 1rem;
+	text-align: right;
+	float: right;
+}
+.b{
+	line-height: 2rem;
+}
+.c{
+	line-height: 4rem;
+}
+
