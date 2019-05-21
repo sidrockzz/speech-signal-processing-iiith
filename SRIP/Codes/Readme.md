@@ -5,7 +5,7 @@ We can change the fft from 2 to 16hz and The frequency upto 1024hz.
 The window size and the X-Axis and Y-Axis are mentioned as pixels per image (According to the frequency which is given) and y-axis shows the unit of the sound(deicbels).
 By the input we can see there is variation in the tone with our speech and can find out the formant by taking the screenshot out of it.
 
-##In the Spectrogram##,
+## In the Spectrogram ##,
 The spectrogram takes the input as in of the audio file and later it gives us the graph of it.
 Which is the speech-to-signal converter.
 
