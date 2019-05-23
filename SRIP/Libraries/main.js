@@ -7,7 +7,7 @@ var processor = null
 var source = null;
 
 var gui = null;
-//Controller for to control the analyzer
+
 var controller = {
 	ref_level: 1e-4,
 	db_min: -70,
@@ -17,13 +17,13 @@ var controller = {
 	block_size: 1024,
 	blocks_per_fft: 8,
 };
-//holding the audio
+
 var sample_buffer = null;
 var fft = null;
-//graph size for the x and y-axis respectively
+
 var log2 = Math.log(2);
 var log10 = Math.log(10);
-//Variables used for the getting the access from the microphone and accessing it throught the browser
+
 navigator.getUserMedia = navigator.getUserMedia ||
 	navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -33,7 +33,7 @@ window.requestAnimationFrame = window.requestAnimationFrame ||
 	window.msRequestAnimationFrame;
 
 var AudioContext = AudioContext || webkitAudioContext || mozAudioContext;
-//Function for the number substring
+
 function NumSubStr(num) {
 	var res = '';
 	for(; num > 0; num = Math.floor(num / 10)) {
@@ -41,7 +41,7 @@ function NumSubStr(num) {
 	}
 	return res;
 }
-//Animation for rendering the audio when its given input and it continues until we make it to the silence(by us)
+
 function Render() {
 	window.requestAnimationFrame(Render);
 	if (!sample_buffer.IsFilled()) {
@@ -86,7 +86,7 @@ function Render() {
 	var freq_min = c0_freq * Math.pow(freq_cent, controller.freq_min_cents);
 	var freq_max = c0_freq * Math.pow(freq_cent, controller.freq_min_cents + controller.freq_range_cents);
 
-	var text_width = 60;
+	var text_width = 80;
 	var text_height = 15;
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -124,7 +124,7 @@ function Render() {
 		var cents = controller.freq_min_cents + cents_rel;
 		var octave = Math.round(cents / 1200);
 		var note = Math.round(cents % 1200 / 100) % 12;
-		var note_names = [1000, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1100, 2000];
+		var note_names = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'H'];
 		var x = cents_rel / controller.freq_range_cents * (canvas.width - 2 * text_width) + text_width;
 		var y = canvas.height - text_height;
 		var label = note_names[note] + NumSubStr(octave);
