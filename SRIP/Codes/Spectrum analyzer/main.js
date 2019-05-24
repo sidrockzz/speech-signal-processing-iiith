@@ -1,16 +1,15 @@
-// Gilián Zoltán <gilian@caesar.elte.hu>, 2014
-// Simplified BSD License
-
+//Permission asking for the microphone usage
 var message = null;
+//Canvas the picture of the graph
 var canvas = null;
 var ctx = null;
-
+//Audio context
 var audio_context = null;
 var processor = null
 var source = null;
 
 var gui = null;
-
+//controller
 var controller = {
 	ref_level: 1e-4,
 	db_min: -70,
@@ -20,13 +19,14 @@ var controller = {
 	block_size: 1024,
 	blocks_per_fft: 8,
 };
-
+//Holding the audio and displaying the results and leaving the part to be deleted
 var sample_buffer = null;
+//Fast Fourier Transform
 var fft = null;
-
+//Mathematical Logarithms
 var log2 = Math.log(2);
 var log10 = Math.log(10);
-
+//Permission from the browser as we are using the FireFox and Chrome 
 navigator.getUserMedia = navigator.getUserMedia ||
 	navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
@@ -34,7 +34,7 @@ window.requestAnimationFrame = window.requestAnimationFrame ||
 	window.webkitRequestAnimationFrame ||
 	window.mozRequestAnimationFrame ||
 	window.msRequestAnimationFrame;
-
+//We can use this
 var AudioContext = AudioContext || webkitAudioContext || mozAudioContext;
 
 function NumSubStr(num) {
@@ -206,7 +206,7 @@ function Init() {
 		message.innerHTML = 'The Web Audio API is apparently not supported in this browser.'
 		return;
 	}
-
+//navigator.mozGetUserMedia can be used instead of naviagtor.getUserMedia
 	message.innerHTML = 'To continue, please allow the application to access the audio capture device.'
 	navigator.getUserMedia({audio:true}, StartProcessing, function(e) {
 		console.log('navigator.getUserMedia error: ', e);
