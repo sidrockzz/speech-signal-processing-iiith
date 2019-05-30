@@ -1,5 +1,5 @@
 var Waterfall = (function(options){
-  var id = options.id || 'waterfall';
+  var id = options.id || "waterfall";
   var width = options.width || 1024;
   var height = options.height || 400;
   var background = "rgba(0, 0, 0, 1)";
@@ -18,14 +18,14 @@ var Waterfall = (function(options){
   var timeout = null;
 
   var target = document.getElementById(id);
-  var canvas = document.createElement('canvas');
-  var info = document.createElement('div');
+  var canvas = document.createElement("canvas");
+  var info = document.createElement("div");
   target.appendChild(info);
   canvas.width = width;
   canvas.height = height;
   target.appendChild(canvas);
 
-  var canvasContext = canvas.getContext('2d');
+  var canvasContext = canvas.getContext("2d");
 
   canvasContext.fillStyle = background;
   canvasContext.fillRect(0, 0, width, height);
@@ -42,7 +42,7 @@ var Waterfall = (function(options){
   };
   
   var addEventListeners = function(elem, events, f){
-    if(typeof events == 'string'){events = events.split(' ');}
+    if(typeof events == "string"){events = events.split(' ');}
     for(var i=0; i<events.length; i++){elem.addEventListener(events[i], f)};
   };
 
