@@ -7,7 +7,7 @@ Spectrograms are used extensively in the fields of music, sonar, radar, and spee
 [In detail about the spectrogram,Click](https://en.wikipedia.org/wiki/Spectrogram)
 
 
-##In the Spectrogram##,
+## In the Spectrogram,
 
 This experiment is mainly written in the JS , HTML and CSS.
 
@@ -17,9 +17,9 @@ In this spectrogram, We are able to visualize the the audio in detail by keeping
 
 The spectorgram will be giving the output whenever we talk, It is in the narrow broadband.
 
-[reference for the code] (https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
+[reference for the code](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
 
-# How to run it:
+### How to run it:
 
 It is in the Codes Folder.
 
