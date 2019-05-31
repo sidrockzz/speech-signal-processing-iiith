@@ -121,6 +121,7 @@
     {
         var score = $('<p>',{id: 'question'});
         var correct = 0;
+        var wrong = 0;
         for (var i = 0; i < selectOptions.length; i++) 
         {
           if (selectOptions[i] === allQuestions[i].answer) 
@@ -128,6 +129,29 @@
             correct++;
           }
         }
+          if(selectOptions[0] !== allQuestions[0].answer)
+          {
+           score.append('You have entered wrong option' + " " +selectOptions[0] +" " + 'The correct answer is D' +" " + allQuestions[0].answer + " " +  'Wideband and Dark i.e because corresponds to a resonance in the vocal tract. Formants can be seen very clearly in a wideband spectrogram, where they are displayed as dark bands. The darker a formant is reproduced in the spectrogram, the stronger it is. </br>');
+          }
+          if(selectOptions[1] !== allQuestions[1].answer)
+          {
+           score.append('You have entered wrong option' + " " + selectOptions[1] + " " +  'The correct answer is ' + " " + allQuestions[1].answer + 'Time delay - Duality of Instantaneous Frequency </br>');
+          }
+          if(selectOptions[2] !== allQuestions[2].answer)
+          {
+           score.append('You have entered wrong option' + " " + selectOptions[2] +" " + 'The correct answer is ' + allQuestions[2].answer + 'all the above </br>');
+          }
+          if(selectOptions[3] !== allQuestions[3].answer)
+          {
+           score.append('You have entered wrong option' + " "+ selectOptions[3] +" " + 'The correct answer is ' + allQuestions[3].answer + 'Both a and b - FFT is used for creating the spectrograph and understanding in the mathematical manner </br>');
+          }
+          if(selectOptions[4] !== allQuestions[4].answer)
+          {
+           score.append('You have entered wrong option' + " "+ selectOptions[4] + " " + 'The correct answer is ' + allQuestions[4].answer + 'inversely proportional T = T0 /N </br>');
+          }           
+          
+ 
+        
         score.append('You scored ' + correct + ' out of ' +allQuestions.length);
         return score;
   }
