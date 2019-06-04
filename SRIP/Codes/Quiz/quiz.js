@@ -27,13 +27,12 @@
   var selectOptions = [];
   var quizSpace = $('#quiz');
   
-  var rand= Math.floor(Math.random() * allQuestions.length);
     
   nextQuestion();
     
   $('#next').click(function () 
     {
-        chooseOption();
+        chooseOption(rand);
         if (isNaN(selectOptions[rand])) 
         {
             alert('Please select an option !');
@@ -47,7 +46,7 @@
   
   $('#prev').click(function () 
     {
-        chooseOption();
+        chooseOption(rand);
         quesCounter--;
         nextQuestion();
     });
@@ -82,7 +81,7 @@
         return radioItems;
   }
   
-  function chooseOption() 
+  function chooseOption(rand) 
     {
         selectOptions[rand] = +$('input[name="answer"]:checked').val();
     }
@@ -91,11 +90,11 @@
     {
         quizSpace.fadeOut(function() 
             {
-              var rand= Math.floor(Math.random() * allQuestions.length);
+              
               $('#question').remove();
               if(quesCounter < allQuestions.length)
                 {
-                    
+                    var rand= Math.floor(Math.random() * allQuestions.length);
                     var nextQuestion = createElement(rand);
                     quizSpace.append(nextQuestion).fadeIn();
                     if (!(isNaN(selectOptions[rand]))) 
@@ -140,19 +139,19 @@
           }
           if(selectOptions[1] !== allQuestions[1].answer)
           {
-           score.append('You have entered wrong option' + " " + selectOptions[1] + " " +  'The correct answer is ' + " " + allQuestions[1].answer + 'Time delay - Duality of Instantaneous Frequency </br>');
+           score.append('You have entered wrong option' + " " + selectOptions[1] + " " +  'The correct answer is ' + " " + allQuestions[1].answer +" "+ 'Time delay - Duality of Instantaneous Frequency </br>');
           }
           if(selectOptions[2] !== allQuestions[2].answer)
           {
-           score.append('You have entered wrong option' + " " + selectOptions[2] +" " + 'The correct answer is ' + allQuestions[2].answer + 'all the above </br>');
+           score.append('You have entered wrong option' + " " + selectOptions[2] +" " + 'The correct answer is ' +" " + allQuestions[2].answer +" " + 'all the above </br>');
           }
           if(selectOptions[3] !== allQuestions[3].answer)
           {
-           score.append('You have entered wrong option' + " "+ selectOptions[3] +" " + 'The correct answer is ' + allQuestions[3].answer + 'Both a and b - FFT is used for creating the spectrograph and understanding in the mathematical manner </br>');
+           score.append('You have entered wrong option' + " "+ selectOptions[3] +" " + 'The correct answer is ' +" " + allQuestions[3].answer +" " + 'Both a and b - FFT is used for creating the spectrograph and understanding in the mathematical manner </br>');
           }
           if(selectOptions[4] !== allQuestions[4].answer)
           {
-           score.append('You have entered wrong option' + " "+ selectOptions[4] + " " + 'The correct answer is ' + allQuestions[4].answer + 'inversely proportional T = T0 /N </br>');
+           score.append('You have entered wrong option' + " "+ selectOptions[4] + " " + 'The correct answer is ' +" " + allQuestions[4].answer +" " + 'inversely proportional T = T0 /N </br>');
           }           
           
  
