@@ -188,6 +188,11 @@ function StartProcessing(stream)
 	});
 
 	source = audio_context.createMediaStreamSource(stream);
+        // get the audio element
+        const audioElement = document.querySelector('#audio');
+
+// pass it into the audio context
+        const track = audio_context.createMediaElementSource(audioElement);
 	UpdateController();
 	Render();
 }

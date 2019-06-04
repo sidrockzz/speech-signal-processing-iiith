@@ -167,7 +167,6 @@
     padding: 15px;
     font-size: 13px;
     line-height: 15px; }
-
 /* TODO Separate style and structure */
 #dg-new-constructor {
   padding: 10px;
@@ -184,7 +183,6 @@
   overflow-y: scroll;
   height: 100px;
   position: relative; }
-
 #dg-local-explain {
   display: none;
   font-size: 11px;
@@ -195,10 +193,8 @@
   margin-top: 10px; }
   #dg-local-explain code {
     font-size: 10px; }
-
 #dat-gui-save-locally {
   display: none; }
-
 /** Main type */
 .dg {
   color: #eee;
@@ -418,29 +414,22 @@
     } else if (typeof mozAudioContext !== "undefined") {
       context = new mozAudioContext();
     }
-
     streamSource = context.createMediaStreamSource(stream);
-
     var waterfall = Waterfall({
       stream: streamSource,
       context: context
     });
-
     window.waterfall = waterfall;
     document.getElementById('tonetest').addEventListener("click", function(){
       waterfall.sequence([[14000,200], [0,200], [14500,200], [0,200], [15000,200]]);
     });
-
     document.getElementById('tonetest_stop').addEventListener("click", function(){
       waterfall.stop();
     });
-
   }
-
   function handleError(err) {
     console.log("An error occurred: " + err);
   }
-
   navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
   navigator.getMedia({ audio: true }, gotStream, handleError);
 }(window, document));

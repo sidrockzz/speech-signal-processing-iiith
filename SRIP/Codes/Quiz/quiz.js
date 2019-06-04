@@ -1,3 +1,4 @@
+
 (function() 
  {
   var allQuestions = [{
@@ -25,13 +26,15 @@
   var quesCounter = 0;
   var selectOptions = [];
   var quizSpace = $('#quiz');
+  
+  var rand= Math.floor(Math.random() * allQuestions.length);
     
   nextQuestion();
     
   $('#next').click(function () 
     {
         chooseOption();
-        if (isNaN(selectOptions[quesCounter])) 
+        if (isNaN(selectOptions[rand])) 
         {
             alert('Please select an option !');
         } 
@@ -49,30 +52,30 @@
         nextQuestion();
     });
   
-  function createElement(index) 
+  function createElement(rand) 
     {
         var element = $('<div>',{id: 'question'});
-        var header = $('<h2>Question No. ' + (index + 1) + ' :</h2>');
+        var header = $('<h2>Question No. ' + (rand + 1) + ' :</h2>');
         element.append(header);
 
-        var question = $('<p>').append(allQuestions[index].question);
+        var question = $('<p>').append(allQuestions[rand].question);
         element.append(question);
 
-        var radio = radioButtons(index);
+        var radio = radioButtons(rand);
         element.append(radio);
 
         return element;
     }
   
-  function radioButtons(index) 
+  function radioButtons(rand) 
     {
         var radioItems = $('<ul>');
         var item;
         var input = '';
-        for (var i = 0; i < allQuestions[index].options.length; i++) {
+        for (var i = 0; i < allQuestions[rand].options.length; i++) {
           item = $('<li>');
           input = '<input type="radio" name="answer" value=' + i + ' />';
-          input += allQuestions[index].options[i];
+          input += allQuestions[rand].options[i];
           item.append(input);
           radioItems.append(item);
         }
@@ -81,21 +84,23 @@
   
   function chooseOption() 
     {
-        selectOptions[quesCounter] = +$('input[name="answer"]:checked').val();
+        selectOptions[rand] = +$('input[name="answer"]:checked').val();
     }
    
   function nextQuestion() 
     {
         quizSpace.fadeOut(function() 
             {
+              var rand= Math.floor(Math.random() * allQuestions.length);
               $('#question').remove();
               if(quesCounter < allQuestions.length)
                 {
-                    var nextQuestion = createElement(quesCounter);
+                    
+                    var nextQuestion = createElement(rand);
                     quizSpace.append(nextQuestion).fadeIn();
-                    if (!(isNaN(selectOptions[quesCounter]))) 
+                    if (!(isNaN(selectOptions[rand]))) 
                     {
-                      $('input[value='+selectOptions[quesCounter]+']').prop('checked', true);
+                      $('input[value='+selectOptions[rand]+']').prop('checked', true);
                     }
                     if(quesCounter === 1)
                     {
