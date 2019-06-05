@@ -215,4 +215,13 @@ function Init() {
 	});
 }
 
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+}
 window.onload = Init;
