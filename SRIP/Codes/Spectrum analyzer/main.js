@@ -7,7 +7,6 @@ var ctx = null;
 var audio_context = null;
 var processor = null
 var source = null;
-
 var gui = null;
 //controller
 var controller = {
@@ -35,7 +34,6 @@ window.requestAnimationFrame = window.requestAnimationFrame ||
 	window.mozRequestAnimationFrame ||
 	window.msRequestAnimationFrame;
 //We can use this
-var AudioContext = AudioContext || webkitAudioContext || mozAudioContext;
 
 function NumSubStr(num) {
 	var res = '';
@@ -187,12 +185,7 @@ function StartProcessing(stream)
 		UpdateController();
 	});
 
-	source = audio_context.createMediaStreamSource(stream);
-        // get the audio element
-        const audioElement = document.querySelector('#audio');
-
-// pass it into the audio context
-        const track = audio_context.createMediaElementSource(audioElement);
+	source = audio_context.createMediaStreamSource(stream);    
 	UpdateController();
 	Render();
 }
@@ -216,6 +209,9 @@ function Init() {
 	navigator.getUserMedia({audio:true}, StartProcessing, function(e) {
 		console.log('navigator.getUserMedia error: ', e);
 		message.innerHTML = 'navigator.getUserMedia error: ' + e.name;
+                
+
+                
 	});
 }
 
