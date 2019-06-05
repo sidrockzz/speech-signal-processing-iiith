@@ -17,7 +17,37 @@
 
 <button onclick="playAudio()" type="button">Play Audio</button>
 <button onclick="pauseAudio()" type="button">Pause Audio</button> 
+<style>
 
+.spectrogram {
+  position: relative;
+}
+.axis {
+  font: 14px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+}
+.axis line {
+  shape-rendering: crispEdges;
+  stroke: #444;
+  stroke-width: 1.0px;
+  stroke-dasharray: 2,4;
+}
+    </style>
+
+     <div id="vis" class="spectrogram"></div>
+
+       
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="spectrogram1.js"></script>
+    <script>
+      var sample = new Spectrogram('ex1.wav', "#vis", {width:500, height:200, maxFrequency:8000});
+    </script>
+<br>
+<br>
 <script src="cybuf.js"></script>
 <script src="fft.js"></script>
 <script src="main.js" charset="utf-8"></script>
@@ -414,6 +444,8 @@
        <div class="close-button" style="width: 245px;">Close Controls</div>
     </div>
   </div>
+<br>
+<br>
 <div id="waterfall"></div>
 <script src="Spectrogram.js"></script>
 <script>
