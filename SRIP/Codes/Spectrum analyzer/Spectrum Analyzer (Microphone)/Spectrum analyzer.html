@@ -5,49 +5,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-<a href="spec.html">Frequency bar graph </a>
-<br>
-<a href="spec1.html">Waveform</a>
-<audio id="myAudio">
-  <source src="ex1.wav" type="audio/ogg">
-  Your browser does not support the audio element.
-</audio>
-
-<p>Click the buttons to play or pause the audio.</p>
-
-<button onclick="playAudio()" type="button">Play Audio</button>
-<button onclick="pauseAudio()" type="button">Pause Audio</button> 
-<style>
-
-.spectrogram {
-  position: relative;
-}
-.axis {
-  font: 14px sans-serif;
-}
-.axis path,
-.axis line {
-  fill: none;
-}
-.axis line {
-  shape-rendering: crispEdges;
-  stroke: #444;
-  stroke-width: 1.0px;
-  stroke-dasharray: 2,4;
-}
-    </style>
-
-     <div id="vis" class="spectrogram"></div>
-
-       
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="spectrogram1.js"></script>
-    <script>
-      var sample = new Spectrogram('ex1.wav', "#vis", {width:500, height:200, maxFrequency:8000});
-    </script>
-<br>
-<br>
 <script src="cybuf.js"></script>
 <script src="fft.js"></script>
 <script src="main.js" charset="utf-8"></script>
@@ -481,5 +438,35 @@
 
 <button id="tonetest">tonetest</button>
 <button id="tonetest_stop">tonetest stop</button>
+
+<div id="vis" class="spectrogram"></div>
+    <style>
+
+.spectrogram {
+  position: relative;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+}
+
+.axis line {
+  shape-rendering: crispEdges;
+  stroke: #444;
+  stroke-width: 1.0px;
+  stroke-dasharray: 2,4;
+}
+</style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="spectrogram1.js"></script>
+    <script>
+      var sample = new Spectrogram('ex1.wav', "#vis", {width:500, height:200, maxFrequency:8000});
+    </script>
 </body>
 </html>
