@@ -8,6 +8,8 @@ var audio_context = null;
 var processor = null
 var source = null;
 var gui = null;
+
+            
 //controller
 var controller = {
 	ref_level: 1e-4,
@@ -204,24 +206,16 @@ function Init() {
 		message.innerHTML = 'The Web Audio API is apparently not supported in this browser.'
 		return;
 	}
+           
 //navigator.mozGetUserMedia can be used instead of naviagtor.getUserMedia
 	message.innerHTML = 'To continue, please allow the application to access the audio capture device.'
 	navigator.getUserMedia({audio:true}, StartProcessing, function(e) {
 		console.log('navigator.getUserMedia error: ', e);
 		message.innerHTML = 'navigator.getUserMedia error: ' + e.name;
-                
-
+            
                 
 	});
 }
 
-var x = document.getElementById("myAudio"); 
 
-function playAudio() { 
-  x.play(); 
-} 
-
-function pauseAudio() { 
-  x.pause(); 
-}
 window.onload = Init;
