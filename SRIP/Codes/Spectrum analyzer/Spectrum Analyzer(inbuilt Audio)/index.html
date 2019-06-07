@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <title>SpectrogramJS</title>
     <style>
-
+body {
+  background-color:Tomato;
+}
 
   canvas, svg {
   position: absolute;
@@ -39,7 +41,7 @@
   </head>
   <body>
     <h1>SpectrogramJS</h1>
-    <p>Visualize sounds using a spectrogram - right in your browser!</p>
+    <p>Spectrogram through the input file</p>
 
     <div id="vis" class="spectrogram"></div>
     
@@ -50,16 +52,21 @@
       var sample = new Spectrogram('ex1.wav', "#vis", {width:500, height:200, maxFrequency:8000});
     </script>
     <FORM>
-<INPUT Type="BUTTON" Value="Videsh" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word1.html'"> <br>
-<INPUT Type="BUTTON" Value="mantralaye" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word2.html'"><br>
-<INPUT Type="BUTTON" Value="ke" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word3.html'"><br>
-<INPUT Type="BUTTON" Value="phir" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word4.html'"><br>
-<INPUT Type="BUTTON" Value="pravarthalay" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word5.html'"><br>
-<INPUT Type="BUTTON" Value="kahan" Onclick="window.location.href='file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/word6.html'">
+<INPUT Type="BUTTON" Value="Videsh" Onclick="window.location.href='word1.html'"> <br>
+<br>
+<INPUT Type="BUTTON" Value="mantralaye" Onclick="window.location.href='word2.html'"><br><br>
+<INPUT Type="BUTTON" Value="ke" Onclick="window.location.href='word3.html'"><br><br>
+<INPUT Type="BUTTON" Value="phir" Onclick="window.location.href='word4.html'"><br><br>
+<INPUT Type="BUTTON" Value="pravarthalay" Onclick="window.location.href='word5.html'"><br><br>
+<INPUT Type="BUTTON" Value="kahan" Onclick="window.location.href=word6.html'"><br><br>
 
 </FORM>
- <a href="file:///home/siddharth/speech-signal-processing-iiith/SRIP/Codes/Spectrum%20analyzer/Spectrum%20Analyzer(inbuilt%20Audio)/Waveform.html">To view the spectrogram audio in waveform Click me!</a>
-
+ <a href="Waveform.html">To view the spectrogram audio in waveform Click me!</a>
+<br>
+<br>
+ 
+<FORM>
+<INPUT Type="BUTTON" Value="Go back to the microphone analyzer" Onclick="window.location.href='../Spectrum Analyzer (Microphone)/Spectrum analyzer.html'"><br><br>
 
      
   </body>
