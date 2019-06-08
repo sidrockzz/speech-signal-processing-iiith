@@ -1,4 +1,7 @@
-# About the spectrogram and spectrogram analyzer.
+# Spectrographic analysis of speech.
+
+
+# Descripton:
 
 A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time. When applied to an audio signal, spectrograms are sometimes called sonographs, voiceprints, or voicegrams. When the data is represented in a 3D plot they may be called waterfalls.
 
@@ -7,7 +10,7 @@ Spectrograms are used extensively in the fields of music, sonar, radar, and spee
 [In detail about the spectrogram,Click](https://en.wikipedia.org/wiki/Spectrogram)
 
 
-## In the Spectrogram,
+# Prerequisites:
 
 This experiment is mainly written in the JS , HTML and CSS.
 
@@ -34,6 +37,9 @@ It's simple and your browser should allow the permission to access the microphon
 If you need to access it directly, press on the below link:
 
 [Click me](https://github.com/sidrockzz/speech-signal-processing-iiith/blob/master/SRIP/Codes/Spectrum%20analyzer/Spectrum%20analyzer.html)
+
+To view through the audio file, press the link "Click here for getting the spectrogram through an input file."
+
 
 Thank you!!
 
