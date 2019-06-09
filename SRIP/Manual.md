@@ -48,11 +48,11 @@ The spectorgram will be giving the output whenever we talk, It is in the narrow 
  
  ![Waveform Microphone](Waveform1.png)
  
- ![Spectrogram Microphone](Spectrogram .png)
+ ![Spectrogram Microphone](Spectrogram.png)
  
  ![Waveform In-Built Audio](Waveform.png)
  
- ![Spectrogram In-Built Audio](Spectrograph in-Built.png)
+ ![Spectrogram In-Built Audio](Spectrographin-Built.png)
  
 # Result:
 
