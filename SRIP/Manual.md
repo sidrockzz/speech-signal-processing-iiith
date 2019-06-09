@@ -1,5 +1,7 @@
 # Spectrographic analysis of speech.
 
+# Scope:
+  To find the spectrographic analysis of speech through the microphone as well as through the given audio input.
 
 # Descripton:
 
@@ -22,23 +24,28 @@ The spectorgram will be giving the output whenever we talk, It is in the narrow 
 
 [reference for the code](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
 
-### How to run it:
+# Procedure:
 
-It is in the Codes Folder.
+ It is in the Codes Folder.
 
-To analyze the code please go to the SRIP folder in that goto the Spectrum analyzer folder.
+ To analyze the code please go to the SRIP folder in that goto the Spectrum analyzer folder.
 
-In the Spectrum analyzer folder, you will find a "spectrum analyzer.html".
+ In the Spectrum analyzer folder, you will find a "spectrum analyzer.html". 
 
-Click on that. 
+ It's simple and your browser should allow the permission to access the microphone ,otherwise this experiment won't work.
 
-It's simple and your browser should allow the permission to access the microphone ,otherwise this experiment won't work.
+ If you need to access it directly, press on the below link:
 
-If you need to access it directly, press on the below link:
+ [Click me](https://github.com/sidrockzz/speech-signal-processing-iiith/blob/master/SRIP/Codes/Spectrum%20analyzer /Spectrum%20analyzer.html)
 
-[Click me](https://github.com/sidrockzz/speech-signal-processing-iiith/blob/master/SRIP/Codes/Spectrum%20analyzer/Spectrum%20analyzer.html)
-
-To view through the audio file, press the link "Click here for getting the spectrogram through an input file."
+ To view through the audio file, press the link "Click here for getting the spectrogram through an input file."
+ 
+ To view the waveform press the link in the below to see the in-built audio in it's waveform.
+ 
+ For each and every word it shows spectrographic analysis.
+ 
+# Observation:
+ 
 
 
 Thank you!!
