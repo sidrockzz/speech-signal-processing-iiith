@@ -46,7 +46,35 @@ The spectorgram will be giving the output whenever we talk, It is in the narrow 
  
 # Observation:
  
+ ![Waveform Microphone](Waveform1.png)
+ 
+ ![Spectrogram Microphone](Spectrogram.png)
+ 
+ ![Waveform In-Built Audio](Waveform.png)
+ 
+ ![Spectrogram In-Built Audio](Spectrograph in-Built.png)
+ 
+# Result:
 
+ The spectrogram is formed through the microphone or through the in-built.
+ 
+# Bottleneck:
+ 
+ The spectrogram can be seen only in the Firefox and Chrome.
+ 
+ To change the audio file, you have to change the path in the code.
+ 
+ If we didn't give permission to access the microphone , then spectrum analyzer doesn't work w.r.t to the microphone.
+ 
+ 
+# Issues:
+  
+  If there is any issues occured, please mention it in the issues.
+  
+
+# Contact:
+  
+  For clearing the doubts, raise an issue or contact me though my email : siddu1999@gmail.com
 
 Thank you!!
 
