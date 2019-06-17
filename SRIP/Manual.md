@@ -25,6 +25,7 @@ The spectorgram will be giving the output whenever we talk, It is in the narrow 
 [reference for the code](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
 
 # Procedure:
+ In the Codes Folder, you will find "index.htm". Directly it will get you through the spectrographic analysis.
 
  It is in the Codes Folder.
 
